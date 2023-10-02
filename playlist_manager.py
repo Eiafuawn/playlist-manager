@@ -11,8 +11,8 @@ def spotify_user_library():
     # Set up authentication
     sp = spotipy.Spotify(
         auth_manager=SpotifyOAuth(
-            client_id=os.getenv(CLIENT_ID),
-            client_secret=os.getenv((CLIENT_SECRET)),
+            client_id=os.getenv("CLIENT_ID"),
+            client_secret=os.getenv(("CLIENT_SECRET")),
             redirect_uri="http://localhost:8888",
             scope="playlist-read-private",
         )
