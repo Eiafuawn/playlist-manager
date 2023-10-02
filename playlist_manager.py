@@ -4,14 +4,15 @@ import subprocess
 
 import spotipy
 from spotipy.oauth2 import SpotifyOAuth
-
+from dotenv import load_dotenv
+load_dotenv()
 
 def spotify_user_library():
     # Set up authentication
     sp = spotipy.Spotify(
         auth_manager=SpotifyOAuth(
-            client_id="9f7bd5d2a92f422e88b2305ee46f1059",
-            client_secret="e05382e5c99348c28c788d3b8360b57b",
+            client_id=os.getenv(CLIENT_ID),
+            client_secret=os.getenv((CLIENT_SECRET)),
             redirect_uri="http://localhost:8888",
             scope="playlist-read-private",
         )
