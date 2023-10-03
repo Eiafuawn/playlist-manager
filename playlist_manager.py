@@ -34,9 +34,9 @@ def playlist_selection(playlists):
 
 
 def display_menu(target_directory):
-    menu = int(input("""What do you want to do?:\n
-                     1. Download a playlist\n
-                     2. Manage downloaded playlists"""))
+    menu = int(input("What do you want to do?:\n" +
+                     "1. Download a playlist\n" +
+                     "2. Manage downloaded playlists\n"))
     if menu == 1:
         playlists = spotify_user_library()
         selection = playlist_selection(playlists)
