@@ -56,6 +56,11 @@ def playlist_handler(target_directory, playlist):
             os.makedirs(selected_playlist)
             print(f"Directory {selected_playlist} has been created")
             launch_spotdl(playlist[0], selected_playlist)
+            active = str(input(
+                    f"Would you like to make {selected_playlist} active?")
+                )
+            if active == "y" or active == "yes":
+                modify_active_playlist(target_directory)
         print(f"Processing of files in {target_directory} complete")
     else:
         print(f"The directory {target_directory} does not exist on the drive.")
