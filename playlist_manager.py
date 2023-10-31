@@ -7,6 +7,7 @@ from spotipy.oauth2 import SpotifyOAuth
 from dotenv import load_dotenv
 load_dotenv()
 
+
 def spotify_user_library():
     # Set up authentication
     sp = spotipy.Spotify(
@@ -121,7 +122,15 @@ def modify_active_playlist(path):
 def launch_spotdl(link, selected_playlist):
     try:
         os.chdir(selected_playlist)
-        subprocess.run(["python", "-m", "spotdl", link], check=True)
+        command = [
+            "spotdl",
+            "sync",
+            link,
+            "--save-file",
+            "sync.spotdl"
+        ]
+        subprocess.run(command, check=True)
+
     except subprocess.CalledProcessError as e:
         print(f"Error: {e}")
     except Exception as e:
