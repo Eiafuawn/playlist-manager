@@ -1,9 +1,15 @@
 ---
+<div align="center">
+   
+   # Spotia3310 - Spotify Playlist Manager using Spotdl
+   
+   <p align="center">
+      <img src="./nokia3310.jpg" alt="Spotia3310 Logo" width="200"/>
+   </p>
 
-# Spotia3310 - Spotify Playlist Manager using Spotdl
-![Spotia3310 Logo](./nokia3310.jpg)
 
-Spotia3310 is a Python-based Spotify playlist manager that simplifies the process of downloading and organizing Spotify playlists on Dumbphones.
+   Spotia3310 is a Python-based Spotify playlist manager that simplifies the process of downloading and organizing Spotify playlists on Dumbphones.
+</div>
 
 ## Features
 
