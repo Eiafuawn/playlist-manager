@@ -18,7 +18,7 @@ class Playlist:
     def download(self):
         try:
             os.mkdir(self.path)
-            os.chdir(self.path)
+            print(f"Created {self.path} directory")
             # Launches the spotdl command using sync
             command = [
                 "spotdl",
@@ -27,12 +27,12 @@ class Playlist:
                 "--save-file",
                 "sync.spotdl"
             ]
-            subprocess.run(command, check=True)
+            subprocess.run(command, check=True, cwd=self.path)
 
         except subprocess.CalledProcessError as e:
             print(f"Error: {e}")
         except Exception as e:
-            print(f"An unexpected error occurred: {e}")
+            print(f"An unexpected error occurred during download: {e}")
 
 
 # class PlaylistExist(Exception):
